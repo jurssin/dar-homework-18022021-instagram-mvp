@@ -16,7 +16,9 @@ class StoriesViewController: UIViewController {
         imageView.image = UIImage(named: "post10")
         return imageView
     }()
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()

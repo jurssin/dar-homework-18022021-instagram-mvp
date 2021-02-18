@@ -108,6 +108,7 @@ class MainViewController: UIViewController {
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             let vc = StoriesViewController()
             vc.storiesImageView.image = postData[indexPath.row].image
+            vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
         }
     }
