@@ -17,6 +17,7 @@
 		CE19CC0525DE1FC100FF0160 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19CC0425DE1FC100FF0160 /* ImageConstants.swift */; };
 		CE19CC0725DE20AE00FF0160 /* StoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19CC0625DE20AE00FF0160 /* StoriesCollectionViewCell.swift */; };
 		CE19CC0925DE218A00FF0160 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19CC0825DE218A00FF0160 /* PostTableViewCell.swift */; };
+		CE52C7C725DE5CAB0061F7A9 /* StoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C7C625DE5CAB0061F7A9 /* StoriesViewController.swift */; };
 		CE9AAF6925DE304400F38FC6 /* InterestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AAF6825DE304400F38FC6 /* InterestingViewController.swift */; };
 		CE9AAF6F25DE314800F38FC6 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AAF6E25DE314800F38FC6 /* NewPostViewController.swift */; };
 		CE9AAF7525DE324600F38FC6 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AAF7425DE324600F38FC6 /* ShopViewController.swift */; };
@@ -38,6 +39,7 @@
 		CE19CC0425DE1FC100FF0160 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
 		CE19CC0625DE20AE00FF0160 /* StoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE19CC0825DE218A00FF0160 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		CE52C7C625DE5CAB0061F7A9 /* StoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewController.swift; sourceTree = "<group>"; };
 		CE9AAF6825DE304400F38FC6 /* InterestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestingViewController.swift; sourceTree = "<group>"; };
 		CE9AAF6E25DE314800F38FC6 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		CE9AAF7425DE324600F38FC6 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		CE19CBE625DE1CB800FF0160 /* Instagram Main Page(MVP) */ = {
 			isa = PBXGroup;
 			children = (
+				CE52C7C125DE5C6D0061F7A9 /* StoriesModule */,
 				CE9AAF7625DE32B900F38FC6 /* ProfileModule */,
 				CE9AAF7025DE322500F38FC6 /* ShopModule */,
 				CE9AAF6A25DE311900F38FC6 /* NewPostModule */,
@@ -135,6 +138,38 @@
 				CE19CBF025DE1CBA00FF0160 /* Assets.xcassets */,
 			);
 			path = SupportingFIles;
+			sourceTree = "<group>";
+		};
+		CE52C7C125DE5C6D0061F7A9 /* StoriesModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE52C7C525DE5C8A0061F7A9 /* Presenter */,
+				CE52C7C425DE5C840061F7A9 /* View */,
+				CE52C7C225DE5C780061F7A9 /* Model */,
+			);
+			path = StoriesModule;
+			sourceTree = "<group>";
+		};
+		CE52C7C225DE5C780061F7A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE52C7C425DE5C840061F7A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE52C7C625DE5CAB0061F7A9 /* StoriesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE52C7C525DE5C8A0061F7A9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		CE9AAF6425DE2FFB00F38FC6 /* InterestingModule */ = {
@@ -335,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE52C7C725DE5CAB0061F7A9 /* StoriesViewController.swift in Sources */,
 				CE19CBEC25DE1CB800FF0160 /* MainViewController.swift in Sources */,
 				CE19CC0525DE1FC100FF0160 /* ImageConstants.swift in Sources */,
 				CE9AAF7525DE324600F38FC6 /* ShopViewController.swift in Sources */,

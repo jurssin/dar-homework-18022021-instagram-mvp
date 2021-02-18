@@ -10,31 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
         
-        var storiesData: [Stories] = [
-            Stories(name: "juliet", image: "avatar1"),
-            Stories(name: "fred", image: "avatar2"),
-            Stories(name: "carl", image: "avatar3"),
-            Stories(name: "ashlie", image: "avatar4"),
-            Stories(name: "sam", image: "avatar5"),
-            Stories(name: "tony", image: "avatar6"),
-            Stories(name: "zara", image: "avatar7"),
-            Stories(name: "ray", image: "avatar8"),
-            Stories(name: "ben", image: "avatar9"),
-            Stories(name: "steve", image: "avatar10")
-        ]
-        
-        var postData: [Post] = [
-            Post(image: images.first, title: "No storyboards"),
-            Post(image: images.second, title: "5 soft skills for developers"),
-            Post(image: images.third, title: "What's new in Xcode 11"),
-            Post(image: images.fourth, title: "Patroen revamp"),
-            Post(image: images.fifth, title: "How I got raise. $60 - $100"),
-            Post(image: images.six, title: "Shake Gesture"),
-            Post(image: images.seven, title: "2019 state of salaries"),
-            Post(image: images.eight, title: "How to build your app wirelessly"),
-            Post(image: images.nine, title: "Swift news 70"),
-            Post(image: images.ten, title: "The 90/90 Rule")
-        ]
+        var storiesData: [Stories] = []
+        var postData: [Post] = []
         
         lazy var postTableView: UITableView = {
             let tableView = UITableView(frame: .zero, style: .grouped)
@@ -72,7 +49,6 @@ class MainViewController: UIViewController {
             self.presenter = MainViewPresenter(view: self)
             setupUI()
             likes = [String](repeating: "like", count: postData.count)
-            
             print(likes)
         }
     }
@@ -127,6 +103,12 @@ class MainViewController: UIViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoriesCollectionViewCell", for: indexPath) as! StoriesCollectionViewCell
             cell.setDataToCells(imageName: storiesData[indexPath.row].image, userName: storiesData[indexPath.row].name)
             return cell
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let vc = StoriesViewController()
+            vc.storiesImageView.image = postData[indexPath.row].image
+            present(vc, animated: true, completion: nil)
         }
     }
 
@@ -194,11 +176,11 @@ class MainViewController: UIViewController {
     
 extension MainViewController: MainViewProtocol {
     func setPosts(postData: [Post]) {
-        
+        self.postData = postData
     }
     
     func setStories(storiesData: [Stories]) {
-        
+        self.storiesData = storiesData
     }
     
     

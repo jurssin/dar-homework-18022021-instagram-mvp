@@ -41,6 +41,13 @@ class PostTableViewCell: UITableViewCell {
         return button
     }()
     
+    lazy var numberOfLikesLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        return label
+    }()
+    
     override func prepareForReuse() {
         super.prepareForReuse()
     }
