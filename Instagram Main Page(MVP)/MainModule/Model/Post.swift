@@ -12,4 +12,5 @@ struct Post {
     var image: UIImage
     var title: String
     var isLiked: Bool
+    var numberOfLikes: Int
 }

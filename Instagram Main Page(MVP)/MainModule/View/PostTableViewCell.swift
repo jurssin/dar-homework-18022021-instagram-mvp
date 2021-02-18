@@ -60,7 +60,6 @@ class PostTableViewCell: UITableViewCell {
     lazy var numberOfLikesLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.text = "Likes: 541"
         label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
     }()

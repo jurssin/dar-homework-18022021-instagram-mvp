@@ -84,6 +84,7 @@ class MainViewController: UIViewController {
 
             }
             cell.setData(post: post, userImage: images, userName: names)
+            cell.numberOfLikesLabel.text = "\(postData[indexPath.row].numberOfLikes) Likes"
             return cell
         }
         @objc func handleLikes(sender: UIButton) {
