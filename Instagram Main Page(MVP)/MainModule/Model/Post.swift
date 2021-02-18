@@ -11,4 +11,5 @@ import UIKit
 struct Post {
     var image: UIImage
     var title: String
+    var isLiked: Bool
 }

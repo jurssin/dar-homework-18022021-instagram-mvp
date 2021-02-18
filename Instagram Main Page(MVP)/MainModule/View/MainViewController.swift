@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
             let tableView = UITableView(frame: .zero, style: .grouped)
             tableView.register(PostTableViewCell.self, forCellReuseIdentifier: "PostCell")
             tableView.translatesAutoresizingMaskIntoConstraints = false
-            tableView.rowHeight = 450
+            tableView.rowHeight = 460
             tableView.allowsSelection = false
             tableView.dataSource = self
             tableView.delegate = self
@@ -42,14 +42,14 @@ class MainViewController: UIViewController {
         }()
     
         var presenter: MainViewPresenterProtocol!
-        var likes: [String] = []
+        //var likes: [String] = []
 
         override func viewDidLoad() {
             super.viewDidLoad()
             self.presenter = MainViewPresenter(view: self)
             setupUI()
-            likes = [String](repeating: "like", count: postData.count)
-            print(likes)
+//            likes = [String](repeating: "like", count: postData.count)
+//            print(likes)
         }
     }
 
@@ -76,21 +76,19 @@ class MainViewController: UIViewController {
             cell.likeButton.tag = indexPath.row
 
             cell.likeButton.addTarget(self, action: #selector(handleLikes(sender:)), for: .touchUpInside)
-            
-            cell.likeButton.setBackgroundImage(UIImage(named: likes[indexPath.row]), for: .normal)
+            if !postData[indexPath.row].isLiked {
+                cell.likeButton.setBackgroundImage(UIImage(named: "like"), for: .normal)
+            }
+            else {
+                cell.likeButton.setBackgroundImage(UIImage(named: "liked"), for: .normal)
+
+            }
             cell.setData(post: post, userImage: images, userName: names)
-           
             return cell
         }
         @objc func handleLikes(sender: UIButton) {
             print(sender.tag)
-            if likes[sender.tag] == "like" {
-                likes[sender.tag] = "liked"
-            }
-            else {
-                likes[sender.tag] = "like"
-            }
-            sender.setBackgroundImage(UIImage(named: likes[sender.tag]), for: .normal)
+            presenter.getLikes(tag: sender.tag)
         }
         
     }
@@ -176,6 +174,11 @@ class MainViewController: UIViewController {
     }
     
 extension MainViewController: MainViewProtocol {
+    func updateLikes(postDataWithLike: [Post]) {
+        self.postData = postDataWithLike
+        postTableView.reloadData()
+    }
+    
     func setPosts(postData: [Post]) {
         self.postData = postData
     }

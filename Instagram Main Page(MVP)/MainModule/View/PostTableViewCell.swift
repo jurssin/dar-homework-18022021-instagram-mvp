@@ -41,17 +41,6 @@ class PostTableViewCell: UITableViewCell {
         return button
     }()
     
-    lazy var numberOfLikesLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        return label
-    }()
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
-    
     lazy var userNameLabelBeforeTitle: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -65,6 +54,14 @@ class PostTableViewCell: UITableViewCell {
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 14)
         label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
+    
+    lazy var numberOfLikesLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.text = "Likes: 541"
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
     }()
     
@@ -87,7 +84,7 @@ class PostTableViewCell: UITableViewCell {
 }
 extension PostTableViewCell {
     private func setupUI() {
-        let postElements = [postImageView, postTitleLabel, userAvatarImageView,userNameLabel, likeButton, userNameLabelBeforeTitle]
+        let postElements = [postImageView, postTitleLabel, userAvatarImageView,userNameLabel, likeButton, userNameLabelBeforeTitle, numberOfLikesLabel]
         postElements.forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
@@ -112,8 +109,11 @@ extension PostTableViewCell {
             likeButton.widthAnchor.constraint(equalToConstant: 25),
             likeButton.heightAnchor.constraint(equalToConstant: 25),
             
-            userNameLabelBeforeTitle.topAnchor.constraint(equalTo: likeButton.bottomAnchor, constant: 2),
-            userNameLabelBeforeTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            numberOfLikesLabel.topAnchor.constraint(equalTo: likeButton.bottomAnchor, constant: 2),
+            numberOfLikesLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+            
+            userNameLabelBeforeTitle.topAnchor.constraint(equalTo: numberOfLikesLabel.bottomAnchor, constant: 2),
+            userNameLabelBeforeTitle.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
             
             postTitleLabel.centerYAnchor.constraint(equalTo: userNameLabelBeforeTitle.centerYAnchor),
             postTitleLabel.leadingAnchor.constraint(equalTo: userNameLabelBeforeTitle.trailingAnchor, constant: 5),

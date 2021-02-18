@@ -23,7 +23,6 @@
 		CE9AAF7525DE324600F38FC6 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AAF7425DE324600F38FC6 /* ShopViewController.swift */; };
 		CE9AAF7B25DE330C00F38FC6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AAF7A25DE330C00F38FC6 /* ProfileViewController.swift */; };
 		CE9AAF7D25DE3B7B00F38FC6 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AAF7C25DE3B7B00F38FC6 /* MainViewPresenter.swift */; };
-		CE9AAF7F25DE466700F38FC6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9AAF7E25DE466700F38FC6 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +44,6 @@
 		CE9AAF7425DE324600F38FC6 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		CE9AAF7A25DE330C00F38FC6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CE9AAF7C25DE3B7B00F38FC6 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
-		CE9AAF7E25DE466700F38FC6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +94,6 @@
 				CE19CC0025DE1F6800FF0160 /* Post.swift */,
 				CE19CC0225DE1F9400FF0160 /* Stories.swift */,
 				CE19CC0425DE1FC100FF0160 /* ImageConstants.swift */,
-				CE9AAF7E25DE466700F38FC6 /* NetworkService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -377,7 +374,6 @@
 				CE19CBE825DE1CB800FF0160 /* AppDelegate.swift in Sources */,
 				CE9AAF6925DE304400F38FC6 /* InterestingViewController.swift in Sources */,
 				CE19CC0925DE218A00FF0160 /* PostTableViewCell.swift in Sources */,
-				CE9AAF7F25DE466700F38FC6 /* NetworkService.swift in Sources */,
 				CE9AAF7B25DE330C00F38FC6 /* ProfileViewController.swift in Sources */,
 				CE19CC0725DE20AE00FF0160 /* StoriesCollectionViewCell.swift in Sources */,
 				CE9AAF7D25DE3B7B00F38FC6 /* MainViewPresenter.swift in Sources */,
