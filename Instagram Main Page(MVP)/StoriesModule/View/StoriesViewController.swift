@@ -13,7 +13,7 @@ class StoriesViewController: UIViewController {
     lazy var storiesImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "post10")
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
