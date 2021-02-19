@@ -36,7 +36,8 @@ class MainViewPresenter: MainViewPresenterProtocol {
         Post(image: images.eight, title: "How to build your app wirelessly", isLiked: false, numberOfLikes: 0),
         Post(image: images.nine, title: "Swift news 70", isLiked: false, numberOfLikes: 0),
         Post(image: images.ten, title: "The 90/90 Rule", isLiked: false, numberOfLikes: 0)
-        ]{
+        ]
+        {
         didSet {
             view.updateLikes(postDataWithLike: self.postData)
         }

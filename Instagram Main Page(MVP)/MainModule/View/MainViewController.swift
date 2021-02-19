@@ -42,14 +42,11 @@ class MainViewController: UIViewController {
         }()
     
         var presenter: MainViewPresenterProtocol!
-        //var likes: [String] = []
 
         override func viewDidLoad() {
             super.viewDidLoad()
             self.presenter = MainViewPresenter(view: self)
             setupUI()
-//            likes = [String](repeating: "like", count: postData.count)
-//            print(likes)
         }
     }
 
@@ -76,19 +73,16 @@ class MainViewController: UIViewController {
             cell.likeButton.tag = indexPath.row
 
             cell.likeButton.addTarget(self, action: #selector(handleLikes(sender:)), for: .touchUpInside)
-            if !postData[indexPath.row].isLiked {
-                cell.likeButton.setBackgroundImage(UIImage(named: "like"), for: .normal)
-            }
-            else {
+            cell.likeButton.setBackgroundImage(UIImage(named: "like"), for: .normal)
+            
+            if postData[indexPath.row].isLiked {
                 cell.likeButton.setBackgroundImage(UIImage(named: "liked"), for: .normal)
-
             }
             cell.setData(post: post, userImage: images, userName: names)
             cell.numberOfLikesLabel.text = "\(postData[indexPath.row].numberOfLikes) Likes"
             return cell
         }
         @objc func handleLikes(sender: UIButton) {
-            print(sender.tag)
             presenter.getLikes(tag: sender.tag)
         }
         
@@ -109,6 +103,9 @@ class MainViewController: UIViewController {
             vc.storiesImageView.image = postData[indexPath.row].image
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+                vc.dismiss(animated: true, completion: nil)
+            }
         }
     }
 
